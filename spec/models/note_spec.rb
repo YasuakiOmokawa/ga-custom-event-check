@@ -62,4 +62,13 @@ RSpec.describe Note, type: :model do
 		  end
 		end
 	end
+
+	it "delegates name to the user who created it" do
+		user = double("user", name: "Fake User")
+		note = Note.new
+
+		# noteにuserメソッドが許可されるが、メソッドの返却値はテストダブルであるuserとなる
+		allow(note).to receive(:user).and_return(user)
+		expect(note.user_name).to eq "Fake User"
+	end
 end

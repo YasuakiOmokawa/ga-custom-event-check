@@ -5,28 +5,10 @@ RSpec.describe User, type: :model do
   describe "with factory bot" do
 
     context "when it first build" do
-
-      it "has a valid factory" do
-        expect(FactoryBot.build(:user)).to be_valid
-      end
-
-      it "is invalid without a first name" do
-        user = FactoryBot.build(:user, first_name: nil)
-        user.valid?
-        expect(user.errors[:first_name]).to include("can't be blank")
-      end
-
-      it "is invalid without a last name" do
-        user = FactoryBot.build(:user, last_name: nil)
-        user.valid?
-        expect(user.errors[:last_name]).to include("can't be blank")
-      end
-
-      it "is invalid without an email address" do
-        user = FactoryBot.build(:user, email: nil)
-        user.valid?
-        expect(user.errors[:email]).to include("can't be blank")
-      end
+      it { is_expected.to validate_presence_of :first_name }
+      it { is_expected.to validate_presence_of :last_name }
+      it { is_expected.to validate_presence_of :email }
+      it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
     end
 
     context "when it after build" do
