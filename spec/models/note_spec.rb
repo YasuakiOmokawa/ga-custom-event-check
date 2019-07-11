@@ -64,7 +64,7 @@ RSpec.describe Note, type: :model do
 	end
 
 	it "delegates name to the user who created it" do
-		user = double("user", name: "Fake User")
+		user = instance_double("User", name: "Fake User")
 		note = Note.new
 
 		# noteにuserメソッドが許可されるが、メソッドの返却値はテストダブルであるuserとなる
