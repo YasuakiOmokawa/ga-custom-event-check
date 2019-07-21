@@ -15,6 +15,7 @@ RSpec.describe NotesController, type: :controller do
   end
 
   describe "#index" do
+
     it "searches notes by the provided keyword" do
       # projectに関連するnotesが持つsearchスコープが呼ばれることと、
       # その際の検索キーワードであるtermが同名のパラメータ値に一致することを検証。
