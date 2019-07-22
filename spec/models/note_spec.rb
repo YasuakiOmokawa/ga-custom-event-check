@@ -71,4 +71,7 @@ RSpec.describe Note, type: :model do
 		allow(note).to receive(:user).and_return(user)
 		expect(note.user_name).to eq "Fake User"
 	end
+
+	# PaperclipのShoulda Matchersを使ったファイル添付テストの書き方
+	it { is_expected.to have_attached_file(:attachment) }
 end
