@@ -38,5 +38,11 @@ RSpec.describe User, type: :model do
         expect(user.errors[:email]).to include "has already been taken"
       end
     end
+
+    # it "sends a welcome email on account creation" do
+    #   allow(UserMailer).to \
+    #     receive_message_chain(:welcome_email, :deliver_later)
+    #   user = FactoryBot.create(:user)
+    #   expect(UserM)
   end
 end
