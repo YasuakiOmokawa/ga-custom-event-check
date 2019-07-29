@@ -25,6 +25,8 @@ group :development, :test do
   gem 'shoulda-matchers',
     git: 'https://github.com/thoughtbot/shoulda-matchers.git',
     branch: 'rails-5'
+  gem 'vcr'     # http通信を記録するファイルを作成し、キャッシュする
+  gem 'webmock' # VCRによって利用されるGem
 end
 
 group :development do

@@ -27,3 +27,6 @@
 /spec/test_uploads
 
 .ruby-version
+
+# Ignore VCR request files
+/spec/cassettes

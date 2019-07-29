@@ -12,7 +12,7 @@ RSpec.feature "Tasks", type: :feature do
 	# 末尾に!の付くメソッドで、DBへの登録が失敗したら例外処理で即時終了させる
 	let!(:task) { project.tasks.create!(name: "Finish RSpec tutorial") }
 
-  scenario "user toggles a task", js: true do
+  scenario "user toggles a task", js: true, vcr: true do
     sign_in user
     go_to_project "RSpec tutorial"
 
