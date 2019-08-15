@@ -22,6 +22,28 @@ RSpec.feature "Projects", type: :feature do
 		expect_update_project "Update Description"
 	end
 
+	scenario "user completes a project", focus: true do
+		# プロジェクトを持ったユーザを準備する
+		user = FactoryBot.create(:user)
+		project = FactoryBot.create(:project, owner: user)
+
+		# ユーザはログインしている
+		sign_in user
+
+		# ユーザがプロジェクト画面を開き、
+		visit project_path(project)
+
+		# "complete"ボタンをクリックすると、
+		click_button "Complete"
+
+		# プロジェクトは完了済みとしてマークされる
+		expect(project.reload.completed?).to be true
+		expect(page).to \
+			have_content "Congratulations, this project is complete!"
+		expect(page).to have_content "Completed"
+		expect(page).to_not have_button "Complete"
+	end
+
 	def go_to_project(name)
   	visit root_path # Deviseのsign_inではセッションを作成するだけなので、遷移を行う
   	click_link name
