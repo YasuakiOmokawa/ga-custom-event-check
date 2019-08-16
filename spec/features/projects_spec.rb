@@ -28,13 +28,14 @@ RSpec.feature "Projects", type: :feature do
 		project = FactoryBot.create(:project, owner: user)
 
 		# ユーザはログインしている
-		sign_in user
+		login_as user, scope: :user
 
 		# ユーザがプロジェクト画面を開き、
 		visit project_path(project)
 
 		# "complete"ボタンをクリックすると、
 		click_button "Complete"
+		# save_and_open_page
 
 		# プロジェクトは完了済みとしてマークされる
 		expect(project.reload.completed?).to be true
