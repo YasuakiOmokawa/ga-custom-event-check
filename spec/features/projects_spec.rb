@@ -22,7 +22,7 @@ RSpec.feature "Projects", type: :feature do
 		expect_update_project "Update Description"
 	end
 
-	scenario "user completes a project", focus: true do
+	scenario "user completes a project" do
 		# プロジェクトを持ったユーザを準備する
 		user = FactoryBot.create(:user)
 		project = FactoryBot.create(:project, owner: user)
@@ -32,6 +32,7 @@ RSpec.feature "Projects", type: :feature do
 
 		# ユーザがプロジェクト画面を開き、
 		visit project_path(project)
+		expect(page).to_not have_content "Completed"
 
 		# "complete"ボタンをクリックすると、
 		click_button "Complete"
