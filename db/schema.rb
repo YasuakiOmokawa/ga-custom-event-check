@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20190815055054) do
     t.datetime "updated_at", null: false
     t.string "attachment_file_name"
     t.string "attachment_content_type"
-    t.integer "attachment_file_size"
+    t.bigint "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.index ["project_id"], name: "index_notes_on_project_id"
     t.index ["user_id"], name: "index_notes_on_user_id"

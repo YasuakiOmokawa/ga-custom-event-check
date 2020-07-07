@@ -30,3 +30,6 @@
 
 # Ignore VCR request files
 /spec/cassettes
+
+# Ignore vendor bundle
+/vendor/bundle
