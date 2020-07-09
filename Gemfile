@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.1'
-gem 'sqlite3'
+# gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -27,6 +27,7 @@ group :development, :test do
     branch: 'rails-5'
   gem 'vcr'     # http通信を記録するファイルを作成し、キャッシュする
   gem 'webmock' # VCRによって利用されるGem
+  gem 'sqlite3'
 end
 
 group :development do
@@ -46,3 +47,6 @@ gem 'devise'
 gem 'paperclip'
 gem 'geocoder'
 
+group :production do
+  gem 'pg'
+end
