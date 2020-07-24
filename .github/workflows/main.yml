@@ -17,8 +17,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      uses: benmatselby/gollum-page-watcher-action@v1.4.0
+    - uses: benmatselby/gollum-page-watcher-action@v1.4.0
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: #custom-event-github-wiki-updates
-        SLACK_USERNAME: Yasuaki Omokawa
+        SLACK_USERNAME: Gollum
