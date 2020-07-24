@@ -20,5 +20,5 @@ jobs:
     - uses: benmatselby/gollum-page-watcher-action@v1.4.0
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_CHANNEL: #custom-event-github-wiki-updates
-        SLACK_USERNAME: Gollum
+        SLACK_CHANNEL: #ga-wiki-updates
+        SLACK_USERNAME: Wiki Watcher
