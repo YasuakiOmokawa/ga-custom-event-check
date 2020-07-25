@@ -1,6 +1,6 @@
-# *Everyday Rails Testing with RSpec* 演習
+# Google Analytics カスタムイベント調査
 
-参照：
+調査用アプリの概要：
 [Everyday Rails Testing with RSpec]: https://leanpub.com/everydayrailsrspec
 
-これは、私の魂の記録です。。 This is my soul notes.
+これは、GA でカスタムイベントを取得するための検証に使うリポジトリです。
